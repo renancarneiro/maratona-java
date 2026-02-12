@@ -1,4 +1,4 @@
-package exercicios;
+package org.example.exercicios;
 
 import java.util.Scanner;
 
@@ -18,10 +18,10 @@ public class Exercicio01 {
 
         if((a + b) < c){
             System.out.println("A soma de A + B é menor que C");
-        }else if{
+        }else if((a + b) > c) {
             System.out.println("A soma de A + B é maior que C");
-        }else{
-
+        }else {
+            System.out.println("A soma de A + B é igual a C");
         }
     }
 }

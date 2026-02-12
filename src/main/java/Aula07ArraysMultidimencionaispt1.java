@@ -1,4 +1,6 @@
-public class Aula06ArraysMultidimencionaispt1
+package org.example;
+
+public class Aula07ArraysMultidimencionaispt1
 {
     public static void main(String[] args) {
         int[][] dias = new int[3][4];
