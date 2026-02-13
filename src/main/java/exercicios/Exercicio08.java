@@ -1,4 +1,4 @@
-package exercicios;
+package org.example.exercicios;
 
 import java.util.Scanner;
 
@@ -7,31 +7,32 @@ public class Exercicio08 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("Quantidade de valores: ");
         int quantidade = scanner.nextInt();
-
         int[] valor = new int[quantidade];
-        //todo: ajustar lógica de ordenação
-        int maiorTemp;
-        int menorTemp;
-        for(int i=0;i<valor.length;i++){
-            System.out.println(i);
-            System.out.println("Digite o valor "+i);
-            valor[i]= scanner.nextInt();
 
-            for (int j=0;j<valor.length-1;j++){
-                if(valor[j]<valor[j+1]){
-                   menorTemp = valor[j];
-                   maiorTemp = valor[j+1];
+        int temp;
+        for (int i = 0; i < valor.length; i++) {
+            System.out.println("Digite o número do valor " + (i+1));
+            valor[i] = scanner.nextInt();
+        } {
 
-                   valor[j] = maiorTemp;
-                   valor[j+1] = menorTemp;
+        }
+
+        for (int j = 0; j < valor.length; j++) {
+            for (int k = 0; k < valor.length; k++) {
+                if(valor[j]>valor[k]){
+                    temp = valor[k];
+                    valor[k] = valor[j];
+                    valor[j]=temp;
                 }
             }
         }
 
-        for (int k = 0; k < valor.length; k++) {
-            System.out.println(valor[k]);
+        System.out.println("========= ORDENAÇÃO =========");
+
+        for (int resultado : valor) {
+            System.out.println(resultado);
         }
 
     }
