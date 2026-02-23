@@ -1,4 +1,4 @@
-package org.example;
+package introducao;
 
 public class Aula07ArraysMultidimencionaispt1
 {

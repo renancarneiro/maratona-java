@@ -1,7 +1,4 @@
-package org.example;
-
-import java.sql.SQLOutput;
-import java.util.Scanner;
+package introducao;
 
 public class Aula04EstruturasCondicionais {
     public static void main(String[] args) {

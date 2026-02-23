@@ -1,4 +1,4 @@
-package org.example;
+package introducao;
 
 public class Aula06ArraysPt2 {
     public static void main(String[] args) {
