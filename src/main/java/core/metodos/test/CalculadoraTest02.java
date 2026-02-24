@@ -7,7 +7,7 @@ public class CalculadoraTest02 {
         Calculadora calculadora = new Calculadora();
 
         int a = 23;
-        int b = 55;
+        int b = 0;
 
         calculadora.somaNumeros(a, b);
         calculadora.multiplicacao(a,b);
