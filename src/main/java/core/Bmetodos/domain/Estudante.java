@@ -1,4 +1,4 @@
-package core.metodos.domain;
+package core.Bmetodos.domain;
 
 public class Estudante {
     private String nome;

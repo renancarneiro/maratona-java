@@ -1,6 +1,6 @@
-package core.metodos.test;
+package core.Bmetodos.test;
 
-import core.metodos.domain.Pessoa;
+import core.Bmetodos.domain.Pessoa;
 
 public class PessoaTest01 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package core.classes.domain;
+package core.Aclasses.domain;
 
 public class Carro {
     public String nome;

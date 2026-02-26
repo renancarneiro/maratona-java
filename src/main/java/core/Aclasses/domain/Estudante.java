@@ -1,4 +1,4 @@
-package core.classes.domain;
+package core.Aclasses.domain;
 
 public class Estudante {
     public String nome = "Nome inicial";

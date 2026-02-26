@@ -1,6 +1,6 @@
-package core.metodos.test;
+package core.Bmetodos.test;
 
-import core.metodos.domain.Calculadora;
+import core.Bmetodos.domain.Calculadora;
 
 public class CalculadoraTest02 {
     public static void main(String[] args) {

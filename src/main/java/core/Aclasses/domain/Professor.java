@@ -1,4 +1,4 @@
-package core.classes.domain;
+package core.Aclasses.domain;
 
 public class Professor {
     public String nome;

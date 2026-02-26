@@ -1,6 +1,6 @@
-package core.classes.test;
+package core.Aclasses.test;
 
-import core.classes.domain.Professor;
+import core.Aclasses.domain.Professor;
 
 public class ProfessorTest01 {
     public static void main(String[] args) {
