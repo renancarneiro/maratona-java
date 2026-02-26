@@ -4,7 +4,7 @@ import core.Csobrecargametodos.domain.Anime;
 
 public class AnimeTest01 {
     public static void main(String[] args) {
-        Anime anime = new Anime();
+        Anime anime = new Anime("DEATH NOTE", "STREAMING", 10);
 //        anime.setNome("DEATH NOTE");
 //        anime.setTipo("STREAMING");
 //        anime.setEpisodios(10);
@@ -13,6 +13,11 @@ public class AnimeTest01 {
         anime.imprime();
         anime.init("DEATH NOTE", "STREAMING", 10);
         anime.imprime();
+
+        new Anime();
+
+        new Anime("Anime", "Tipo", 20, true);
+
 
     }
 }

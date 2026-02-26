@@ -4,6 +4,23 @@ public class Anime {
     private String nome;
     private String tipo;
     private int episodios;
+    private boolean isFalse;
+
+    public Anime(String nome, String tipo, int episodios){
+        this();
+        this.nome = nome;
+        this.tipo = tipo;
+        this.episodios = episodios;
+    }
+
+    public Anime(String nome, String tipo, int episodios, boolean isFalse){
+        this(nome, tipo, episodios);
+        this.isFalse = isFalse;
+    }
+
+    //Sobrecarga de construtor
+    public Anime(){
+    }
 
     public void init(String nome, String tipo){
         this.nome = nome;
@@ -28,6 +45,14 @@ public class Anime {
 
     public String getNome(){
         return this.nome;
+    }
+
+    public boolean isFalse() {
+        return isFalse;
+    }
+
+    public void setFalse(boolean aFalse) {
+        isFalse = aFalse;
     }
 
     public void setTipo(String tipo){
