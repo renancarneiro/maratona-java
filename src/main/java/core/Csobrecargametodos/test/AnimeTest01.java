@@ -19,5 +19,6 @@ public class AnimeTest01 {
         new Anime("Anime", "Tipo", 20, true);
 
 
+
     }
 }
