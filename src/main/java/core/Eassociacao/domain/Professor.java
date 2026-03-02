@@ -1,0 +1,17 @@
+package org.example.core.Eassociacao.domain;
+
+public class Professor {
+    private String nome;
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Professor(String nome) {
+        this.nome = nome;
+    }
+}

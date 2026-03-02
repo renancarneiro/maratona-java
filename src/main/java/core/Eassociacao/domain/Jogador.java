@@ -1,4 +1,5 @@
 package core.Eassociacao.domain;
+import core.Eassociacao.domain.Time;
 
 public class Jogador {
     private String nome;
