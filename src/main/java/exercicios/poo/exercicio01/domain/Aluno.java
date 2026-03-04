@@ -1,4 +1,4 @@
-package org.example.exercicios.poo.exercicio01.domain;
+package exercicios.poo.exercicio01.domain;
 
 public class Aluno {
     private String nome;

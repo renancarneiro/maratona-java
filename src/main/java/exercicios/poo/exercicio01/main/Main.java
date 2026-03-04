@@ -1,9 +1,9 @@
-package org.example.exercicios.poo.exercicio01.main;
+package exercicios.poo.exercicio01.main;
 
-import org.example.exercicios.poo.exercicio01.domain.Aluno;
-import org.example.exercicios.poo.exercicio01.domain.Local;
+import exercicios.poo.exercicio01.domain.Aluno;
+import exercicios.poo.exercicio01.domain.Local;
+import exercicios.poo.exercicio01.domain.Seminario;
 import org.example.exercicios.poo.exercicio01.domain.Professor;
-import org.example.exercicios.poo.exercicio01.domain.Seminario;
 
 import java.util.Scanner;
 
@@ -25,6 +25,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        int contadorCadastro = 0;
+        Seminario[] seminariosCadastrados = new Seminario[999999999];
         System.out.println("SISTEMA DE GERENCIAMENTO DE SEMINÁRIOS");
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -39,8 +41,11 @@ public class Main {
 
             switch (opcao) {
                 case 1:
+                    listarSeminarios(seminariosCadastrados, contadorCadastro);
                     break;
                 case 2:
+                    seminariosCadastrados[contadorCadastro] = cadastrarSeminario();
+                    contadorCadastro++;
                     break;
                 case 3:
                     break;
@@ -51,7 +56,8 @@ public class Main {
         } while (opcao != 0);
     }
 
-    public static void cadastrarSeminario() {
+    public static Seminario cadastrarSeminario() {
+        //Cadastro de seminario
         Scanner input = new Scanner(System.in);
 
         System.out.println("Digite o título do seminário");
@@ -62,11 +68,14 @@ public class Main {
 
         Seminario seminario = new Seminario(titulo, capacidade);
 
+        //Cadastro de local
         System.out.println("Digite o endereço do local");
         String endereco = input.nextLine();
-        Local local = new Local(endereco);
 
-        seminario.setLocal(local);
+        seminario.setLocal(new Local(endereco));
+        input.nextLine();
+
+        //Cadastro de professor
 
         System.out.println("Digite o nome do professor responsável:");
         String nome = input.nextLine();
@@ -78,6 +87,8 @@ public class Main {
 
         seminario.setProfessor(professor);
 
+        //Cadastro de aluno
+
         System.out.println("Digite a quantidade de alunos a serem cadastrados");
         int qntdAlunos = input.nextInt();
 
@@ -85,11 +96,32 @@ public class Main {
 
         for(int i=0; i<alunos.length; i++){
             System.out.println("Digite o nome do aluno:");
-            String nomeAluno = input.nextLine();
+            String nomeAluno = input.next();
+
             System.out.println("Digite a idade do aluno:");
             int idadeAluno = input.nextInt();
             Aluno aluno = new Aluno(nomeAluno,idadeAluno);
             alunos[i] = aluno;
+        }
+
+        seminario.setAlunos(alunos);
+
+        System.out.println("Cadastro finalizado com sucesso: ");
+
+        return seminario;
+    }
+
+
+    public static void listarSeminarios(Seminario[] seminarios, int contadorCadastro){
+
+        for(int i=0;i<contadorCadastro; i++){
+            System.out.println("======= LISTA DE SEMINÁRIOS CADASTRADOS =======");
+            System.out.println("Titulo: "+seminarios[i].getTitulo());
+            System.out.println("Capacidade ocupação: "+seminarios[i].getCapacidade());
+            System.out.println("Local: "+seminarios[i].getLocal().getEndereco());
+            seminarios[i].imprimeAlunos();
+            System.out.println("Professor: "+seminarios[i].getProfessor().getNome());
+            System.out.println("Especialidade professor: "+seminarios[i].getProfessor().getEspecialidade());
         }
     }
 

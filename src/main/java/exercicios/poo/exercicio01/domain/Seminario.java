@@ -1,4 +1,6 @@
-package org.example.exercicios.poo.exercicio01.domain;
+package exercicios.poo.exercicio01.domain;
+
+import org.example.exercicios.poo.exercicio01.domain.Professor;
 
 public class Seminario {
     private String titulo;
@@ -51,4 +53,12 @@ public class Seminario {
     public void setLocal(Local local) {
         this.local = local;
     }
+
+    public void imprimeAlunos(){
+       for(Aluno aluno: this.alunos){
+           System.out.println("Nome: "+aluno.getNome());
+           System.out.println("Idade: "+aluno.getIdade());
+       }
+    }
+
 }
