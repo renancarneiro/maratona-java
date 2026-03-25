@@ -30,7 +30,7 @@ public class Seminario {
         this.capacidade = capacidade;
     }
 
-    public Aluno[] getAlunos() {
+    public exercicios.poo.exercicio01.domain.Aluno[] getAlunos() {
         return alunos;
     }
 

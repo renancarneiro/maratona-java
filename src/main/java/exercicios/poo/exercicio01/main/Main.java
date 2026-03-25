@@ -26,7 +26,7 @@ public class Main {
 
     public static void main(String[] args) {
         int contadorCadastro = 0;
-        Seminario[] seminariosCadastrados = new Seminario[999999999];
+        Seminario[] seminariosCadastrados = new Seminario[1000];
         System.out.println("SISTEMA DE GERENCIAMENTO DE SEMINÁRIOS");
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -44,7 +44,7 @@ public class Main {
                     listarSeminarios(seminariosCadastrados, contadorCadastro);
                     break;
                 case 2:
-                    seminariosCadastrados[contadorCadastro] = cadastrarSeminario();
+                    seminariosCadastrados[contadorCadastro] = cadastrarSeminario(seminariosCadastrados);
                     contadorCadastro++;
                     break;
                 case 3:
@@ -56,7 +56,7 @@ public class Main {
         } while (opcao != 0);
     }
 
-    public static Seminario cadastrarSeminario() {
+    public static Seminario cadastrarSeminario(Seminario[] seminariosCadastrados) {
         //Cadastro de seminario
         Scanner input = new Scanner(System.in);
 
@@ -94,16 +94,19 @@ public class Main {
 
         Aluno[] alunos = new Aluno[qntdAlunos];
 
-        for(int i=0; i<alunos.length; i++){
+        for (int i = 0; i < alunos.length; i++) {
             System.out.println("Digite o nome do aluno:");
             String nomeAluno = input.next();
 
             System.out.println("Digite a idade do aluno:");
             int idadeAluno = input.nextInt();
-            Aluno aluno = new Aluno(nomeAluno,idadeAluno);
+
+            System.out.println("Digite o cpf do aluno:");
+            String cpf = input.next();
+            Aluno aluno = new Aluno(nomeAluno, idadeAluno, cpf);
+            VerificarSeminarioAluno(aluno, seminariosCadastrados);
             alunos[i] = aluno;
         }
-
         seminario.setAlunos(alunos);
 
         System.out.println("Cadastro finalizado com sucesso: ");
@@ -112,18 +115,33 @@ public class Main {
     }
 
 
-    public static void listarSeminarios(Seminario[] seminarios, int contadorCadastro){
+    public static void listarSeminarios(Seminario[] seminarios, int contadorCadastro) {
 
-        for(int i=0;i<contadorCadastro; i++){
+        for (int i = 0; i < contadorCadastro; i++) {
             System.out.println("======= LISTA DE SEMINÁRIOS CADASTRADOS =======");
-            System.out.println("Titulo: "+seminarios[i].getTitulo());
-            System.out.println("Capacidade ocupação: "+seminarios[i].getCapacidade());
-            System.out.println("Local: "+seminarios[i].getLocal().getEndereco());
+            System.out.println("Titulo: " + seminarios[i].getTitulo());
+            System.out.println("Capacidade ocupação: " + seminarios[i].getCapacidade());
+            System.out.println("Local: " + seminarios[i].getLocal().getEndereco());
             seminarios[i].imprimeAlunos();
-            System.out.println("Professor: "+seminarios[i].getProfessor().getNome());
-            System.out.println("Especialidade professor: "+seminarios[i].getProfessor().getEspecialidade());
+            System.out.println("Professor: " + seminarios[i].getProfessor().getNome());
+            System.out.println("Especialidade professor: " + seminarios[i].getProfessor().getEspecialidade());
         }
     }
+
+    public static void VerificarSeminarioAluno(Aluno novoAluno, Seminario[] seminarios) {
+        for (Seminario seminario : seminarios) {
+            if(seminario != null){
+                for (int i = 0; i < seminario.getAlunos().length; i++) {
+                    Aluno aluno = seminario.getAlunos()[i];
+                    if (novoAluno.getCpf() == aluno.getCpf()) {
+                        System.out.println("O aluno já está cadastrado em um seminário");
+                    }
+                }
+
+        }
+    }
+
+}
 
 
 }

@@ -3,10 +3,12 @@ package exercicios.poo.exercicio01.domain;
 public class Aluno {
     private String nome;
     private int idade;
+    private String cpf;
 
-    public Aluno(String nome, int idade) {
+    public Aluno(String nome, int idade, String cpf) {
         this.nome = nome;
         this.idade = idade;
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -25,4 +27,11 @@ public class Aluno {
         this.idade = idade;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 }
