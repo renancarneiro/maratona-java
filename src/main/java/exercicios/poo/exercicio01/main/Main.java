@@ -5,6 +5,7 @@ import exercicios.poo.exercicio01.domain.Local;
 import exercicios.poo.exercicio01.domain.Seminario;
 import org.example.exercicios.poo.exercicio01.domain.Professor;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /***
@@ -133,7 +134,7 @@ public class Main {
             if(seminario != null){
                 for (int i = 0; i < seminario.getAlunos().length; i++) {
                     Aluno aluno = seminario.getAlunos()[i];
-                    if (novoAluno.getCpf() == aluno.getCpf()) {
+                    if (Objects.equals(novoAluno.getCpf(), aluno.getCpf())) {
                         System.out.println("O aluno já está cadastrado em um seminário");
                     }
                 }
