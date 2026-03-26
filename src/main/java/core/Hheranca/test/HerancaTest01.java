@@ -30,5 +30,6 @@ public class HerancaTest01 {
         funcionario1.setNome("Funcionario");
         funcionario1.setEndereco(enderecoFuncionario1);
         funcionario1.imprime();
+        funcionario1.relatorioPagamento();
     }
 }
