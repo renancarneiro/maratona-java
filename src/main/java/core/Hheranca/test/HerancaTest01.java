@@ -10,13 +10,12 @@ public class HerancaTest01 {
         enderecoPessoa1.setCep("55502312");
         enderecoPessoa1.setRua("Passagem bom jesus");
 
+
         //Pessoa TEM Endereco -- associação
         //Funcionario É uma pessoa -- Herança
 
-        Pessoa pessoa1 = new Pessoa();
+        Pessoa pessoa1 = new Pessoa("Nome pessoa1",enderecoPessoa1);
         pessoa1.setCpf("02328832323");
-        pessoa1.setNome("Nome pessoa1");
-        pessoa1.setEndereco(enderecoPessoa1);
         pessoa1.imprime();
 
         Endereco enderecoFuncionario1 = new Endereco();
@@ -24,10 +23,9 @@ public class HerancaTest01 {
         enderecoFuncionario1.setRua("Passagem funcionario");
 
         System.out.println("------------------------------------");
-        Funcionario funcionario1 = new Funcionario();
+        Funcionario funcionario1 = new Funcionario("Funcionario 1");
         funcionario1.setSalario(1600);
         funcionario1.setCpf("000000000");
-        funcionario1.setNome("Funcionario");
         funcionario1.setEndereco(enderecoFuncionario1);
         funcionario1.imprime();
         funcionario1.relatorioPagamento();
