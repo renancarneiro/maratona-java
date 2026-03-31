@@ -10,6 +10,11 @@ public class Cliente {
     private TipoPagamento tipoPagamento;
     private TipoCliente tipoCliente;
 
+
+    public TipoCliente getTipoCliente() {
+        return tipoCliente;
+    }
+
     public Cliente(String nome, TipoPagamento tipoPagamento, TipoCliente tipoCliente) {
         this.nome = nome;
         this.tipoPagamento = tipoPagamento;
