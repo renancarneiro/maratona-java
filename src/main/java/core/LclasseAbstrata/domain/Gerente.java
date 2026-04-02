@@ -13,4 +13,15 @@ public class Gerente extends Funcionario{
     public Gerente(String nome, double salario) {
         super(nome, salario);
     }
+
+    @Override
+    public void calcularBonusAbstrato() {
+
+    }
+
+    @Override
+    public void imprime() {
+        System.out.println("Imprime do gerente");
+    }
+
 }

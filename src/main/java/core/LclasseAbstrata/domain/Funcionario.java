@@ -1,6 +1,6 @@
 package core.LclasseAbstrata.domain;
 
-public class Funcionario {
+public abstract class Funcionario extends Pessoa{
     protected String nome;
     protected double salario;
 
@@ -9,11 +9,10 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    @Override
-    public String toString() {
-        return "Funcionario{" +
-                "nome='" + nome + '\'' +
-                ", salario=" + salario +
-                '}';
+    public double calculoBonusConcreto(){
+        return this.salario + (this.salario * 0.2);
     }
+
+    public abstract void calcularBonusAbstrato();
+
 }
