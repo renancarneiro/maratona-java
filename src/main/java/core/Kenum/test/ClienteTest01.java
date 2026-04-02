@@ -17,5 +17,14 @@ public class ClienteTest01 {
 
         TipoCliente.PESSOA_JURIDICA.imprimir();
         TipoCliente.PESSOA_FISICA.imprimir();
+
+        TipoCliente tipoCliente = TipoCliente.valueOf("PESSOA_FISICA");
+        System.out.println(tipoCliente.TIPO_DOCUMENTO);
+
+        TipoCliente tipoCliente1 = TipoCliente.buscarPorTipoDocumento("CPF");
+        TipoCliente tipoCliente2 = TipoCliente.buscarPorTipoDocumento("CNPJ");
+        System.out.println(tipoCliente1);
+        System.out.println(tipoCliente2);
+
     }
 }

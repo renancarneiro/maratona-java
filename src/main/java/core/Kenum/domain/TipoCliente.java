@@ -16,11 +16,28 @@ public enum TipoCliente {
         }
     };
 
+    @Override
+    public String toString() {
+        return "TipoCliente{" +
+                "VALOR=" + VALOR +
+                ", TIPO_DOCUMENTO='" + TIPO_DOCUMENTO + '\'' +
+                '}';
+    }
+
     public final int VALOR;
     public final String TIPO_DOCUMENTO;
 
     public void imprimir(){
         System.out.println("Dentro do imprimir");
+    }
+
+    public static TipoCliente buscarPorTipoDocumento(String tipoDocumento){
+        for (TipoCliente tipoCliente : values()) {
+            if(tipoCliente.TIPO_DOCUMENTO.equals(tipoDocumento)){
+                return tipoCliente;
+            }
+        }
+        return null;
     }
 
     TipoCliente(int valor, String tipoDocumento) {
